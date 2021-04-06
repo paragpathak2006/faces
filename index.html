@@ -20,7 +20,7 @@
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">Faces</div>
-        <div id="unity-buttonbox" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">Pink</div>
+        <div id="unity-buttonbox" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">Voilet</div>
         <!--onClick ="unityInstance.SendMessage('face','moveObject')-->
 
     </div>
@@ -61,7 +61,8 @@
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {            unityInstance.SetFullscreen(1);          };
-          buttonbox.onclick = () => {            unityInstance.SendMessage('face','moveObject');  alert('sent');  };
+          buttonbox.onclick = () => {            unityInstance.SendMessage('face','moveObject'); };
+          setInterval(function(){ unityInstance.SendMessage('face','moveObject'); }, 3000);
         }).catch((message) => {
           alert(message);
         });
