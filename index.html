@@ -6,7 +6,6 @@
     <title>Unity WebGL Player | Faces</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <div style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center" onClick = "unityInstance.SendMessage('face', 'moveObject', '"1"')">RED</div>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -60,7 +59,6 @@
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
-            setInterval(function(){ unityInstance.SendMessage('face', 'moveObject', '"1"'); }, 5000);
           };
         }).catch((message) => {
           alert(message);
