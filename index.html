@@ -22,8 +22,9 @@
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">Faces</div>
-        <div id="unity-buttonbox1" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">On</div>
-        <div id="unity-buttonbox2" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">Off</div>
+        <div id="unity-buttonbox1" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">Start</div>
+        <div id="unity-buttonbox2" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">Stop</div>
+        <div id="unity-buttonbox3" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">Toggle</div>
         <!--onClick ="unityInstance.SendMessage('face','moveObject')-->
 
     </div>
@@ -48,6 +49,7 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var buttonbox1 = document.querySelector("#unity-buttonbox1");
       var buttonbox2 = document.querySelector("#unity-buttonbox2");
+      var buttonbox3 = document.querySelector("#unity-buttonbox3");
       
 
       //-------------  Size     ------------
@@ -75,6 +77,7 @@
           fullscreenButton.onclick = () => {            unityInstance.SetFullscreen(1);          };
           buttonbox1.onclick = () => {            unityInstance.SendMessage('face','startScript',on); };
           buttonbox2.onclick = () => {            unityInstance.SendMessage('face','startScript',off); };
+          buttonbox3.onclick = () => {            unityInstance.SendMessage('face','moveObject2'); };
           setInterval(function(){ unityInstance.SendMessage('face','moveObject'); }, 500);
         }).catch((message) => {
           alert(message);
