@@ -22,8 +22,8 @@
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">Faces</div>
-        <div id="unity-buttonbox1" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">Start</div>
-        <div id="unity-buttonbox2" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">Stop</div>
+        <div id="unity-buttonbox1" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">On</div>
+        <div id="unity-buttonbox2" style="border:solid 1px black; width:200px; height:30; margin:auto; text-align:center">Off</div>
         <!--onClick ="unityInstance.SendMessage('face','moveObject')-->
 
     </div>
@@ -63,6 +63,9 @@
       //-------------  On Load     ------------
 
       var script = document.createElement("script");
+      var on = "1";
+      var off = "0";
+      
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
@@ -70,8 +73,8 @@
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {            unityInstance.SetFullscreen(1);          };
-          buttonbox1.onclick = () => {            unityInstance.SendMessage('face','startScript','"1"'); };
-          buttonbox2.onclick = () => {            unityInstance.SendMessage('face','startScript','"0"'); };
+          buttonbox1.onclick = () => {            unityInstance.SendMessage('face','startScript',on); };
+          buttonbox2.onclick = () => {            unityInstance.SendMessage('face','startScript',off); };
           setInterval(function(){ unityInstance.SendMessage('face','moveObject'); }, 500);
         }).catch((message) => {
           alert(message);
