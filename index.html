@@ -62,7 +62,7 @@
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {            unityInstance.SetFullscreen(1);          };
           buttonbox.onclick = () => {            unityInstance.SendMessage('face','moveObject'); };
-          setInterval(function(){ unityInstance.SendMessage('face','moveObject'); }, 3000);
+          setInterval(function(){ unityInstance.SendMessage('face','moveObject'); }, 500);
         }).catch((message) => {
           alert(message);
         });
