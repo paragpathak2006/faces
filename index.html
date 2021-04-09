@@ -78,7 +78,7 @@
           buttonbox1.onclick = () => {            unityInstance.SendMessage('face','startScript',on); };
           buttonbox2.onclick = () => {            unityInstance.SendMessage('face','startScript',off); };
           buttonbox3.onclick = () => {            unityInstance.SendMessage('face','moveObject2'); };
-          setInterval(function(){ unityInstance.SendMessage('face','moveObject'); }, 100);
+          setInterval(function(){ unityInstance.SendMessage('face','moveObject'); }, 200);
         }).catch((message) => {
           alert(message);
         });
